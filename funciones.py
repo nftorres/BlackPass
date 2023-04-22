@@ -57,9 +57,9 @@ def guardar_hash(password_hash):
     f = open('Credenciales.txt','a')
     f.writelines(f'id:{id} -> {password_hash}\n')
     f.close()
-    subprocess.run(["git","add", "Credenciales.txt"])
-    subprocess.run(["git","commit", "-m", "'Add new password'"])
-    subprocess.run(["git","push"])
+    subprocess.run(["git", "add", "Credenciales.txt"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    subprocess.run(["git", "commit", "-m", "Add new password"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    subprocess.run(["git", "push"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return id
 
 
