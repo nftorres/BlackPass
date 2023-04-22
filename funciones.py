@@ -1,26 +1,25 @@
-import random, string, bcrypt, sys
+import random, string, bcrypt, sys, subprocess
 from time import sleep
 
-def output(string):
+def output(string, salto="\n"):
     for i in string:
         print(i, end="")
         sys.stdout.flush()
         sleep(0.04)
-    print("\n")
+    if salto == '\n':
+        print(salto)
 def footer():
     output("---------------------------Hecho con Amor por Fabián---------------------------")
 def config_contraseña(longitud_contraseña):
     while True:
+        print()
         config = input("¿Cómo quieres que sea tu contraseña (Sólo digitos/Sólo letras/Alfanumérica)?: ")
         if  config.lower() == 'sólo dígitos' or config.lower() == 'solo digitos' or config.lower() == 'sólo digitos' or config.lower() == 'solo dígitos':
-            output(generar_contraseña(longitud=longitud_contraseña, letras=False))
-            break
+            return generar_contraseña(longitud=longitud_contraseña, letras=False)
         elif config.lower() == 'sólo letras' or config.lower() == 'solo letras':
-            output(generar_contraseña(longitud=longitud_contraseña, digitos=False))
-            break
+            return generar_contraseña(longitud=longitud_contraseña, digitos=False)
         elif config.lower() == 'alfanumerica' or config.lower() == 'alfanumérica':
-            output(generar_contraseña(longitud=longitud_contraseña))
-            break
+            return generar_contraseña(longitud=longitud_contraseña)
         else:
             output("Lo siento, no entendí lo que quisiste decir.")
             continue
@@ -45,13 +44,23 @@ def hashear(password):
     password = password.encode()
     sal = bcrypt.gensalt()
     password_hash = bcrypt.hashpw(password,sal)
-    print(password_hash)
     return password_hash
 
+def generar_id():
+    id = ""
+    for i in range(10):
+        id += random.choice(string.digits)
+    return id
+
 def guardar_hash(password_hash):
+    id = generar_id()
     f = open('Credenciales.txt','a')
-    f.writelines(f'Hash: {password_hash}\n')
+    f.writelines(f'id:{id} -> {password_hash}\n')
     f.close()
+    subprocess.run(["git","add", "Credenciales.py"])
+    subprocess.run(["git","commit", "-m", "'Add new password'"])
+    subprocess.run(["git","push"])
+    return id
 
 
 
