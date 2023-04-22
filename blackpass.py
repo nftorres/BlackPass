@@ -6,39 +6,107 @@ def blackpass():
     while True:
         longitud_contraseña = int(input("Longitud de la contraseña: "))
         if longitud_contraseña > 0 and longitud_contraseña < 4:
-            config_contraseña(longitud_contraseña)
+            password = config_contraseña(longitud_contraseña)
+            print()
+            output("Contraseña Generada: ", salto="")
+            output(password)
             output(f"Esta contraseña es mala porque sólo contiene {longitud_contraseña} caracteres...")
             cambiar = input("¿Quieres generar otra?: ")
             if 'si' in cambiar.lower():
+                output("-----------------------")
+                print()
                 continue
             else:
+                output("------------------------------------------------------------------")
+                output("Información de la contraseña:")
+                output("Contraseña: ", salto="")
+                output(password)
+                password_hash = hashear(password)
+                id = guardar_hash(password_hash)
+                output("id: ", salto="")
+                output(id)
+                output("Hash: ", salto="")
+                print(password_hash,end="\n\n")
+                output("Función de Hash: bcrypt")
+                output("Destino: 'Credenciales.py'")
                 footer()
                 break
         elif longitud_contraseña >= 4 and longitud_contraseña <= 9:
-            config_contraseña(longitud_contraseña)
+            password = config_contraseña(longitud_contraseña)
+            print()
+            output("Contraseña Generada: ", salto="")
+            output(password)
             output(f"Esta contraseña es insegura, un hacker podía adivinarla facilmente...")
             cambiar = input("¿Quieres generar otra?: ")
             if 'si' in cambiar.lower():
+                output("-----------------------")
+                print()
                 continue
             else:
+                output("------------------------------------------------------------------")
+                output("Información de la contraseña:")
+                output("Contraseña: ", salto="")
+                output(password)
+                password_hash = hashear(password)
+                id = guardar_hash(password_hash)
+                output("id: ", salto="")
+                output(id)
+                output("Hash: ", salto="")
+                print(password_hash,end="\n\n")
+                output("Función de Hash: bcrypt")
+                output("Destino: 'Credenciales.py'")
                 footer()
                 break
         elif longitud_contraseña > 9 and longitud_contraseña <= 15:
-            config_contraseña(longitud_contraseña)
+            password = config_contraseña(longitud_contraseña)
+            print()
+            output("Contraseña Generada: ", salto="")
+            output(password)
             output(f"Esta contraseña es segura!")
             cambiar = input("¿Quieres generar otra?: ")
             if 'si' in cambiar.lower():
+                output("-----------------------")
+                print()
                 continue
             else:
+                output("------------------------------------------------------------------")
+                output("Información de la contraseña:")
+                output("Contraseña: ", salto="")
+                output(password)
+                password_hash = hashear(password)
+                id = guardar_hash(password_hash)
+                output("id: ", salto="")
+                output(id)
+                output("Hash: ", salto="")
+                print(password_hash,end="\n\n")
+                output("Función de Hash: bcrypt")
+                output("Destino: 'Credenciales.py'")
                 footer()
                 break
         elif longitud_contraseña > 15 and longitud_contraseña <= 40:
-            config_contraseña(longitud_contraseña)
+            password = config_contraseña(longitud_contraseña)
+            print()
+            output("Contraseña Generada: ", salto="")
+            output(password)
             output(f"¡Felicidades!, Esta contraseña es muy segura")
             cambiar = input("¿Quieres generar otra?: ")
             if 'si' in cambiar.lower():
+                output("-----------------------")
+                print()
                 continue
             else:
+                output("------------------------------------------------------------------")
+                output("Información de la contraseña:")
+                output("Contraseña: ", salto="")
+                output(password)
+                password_hash = hashear(password)
+                id = guardar_hash(password_hash)
+                output("id: ", salto="")
+                output(id)
+                output("Hash: ", salto="")
+                print(password_hash,end="\n\n")
+                output("Función de Hash: bcrypt")
+                output("Destino: 'Credenciales.py'")
                 footer()
                 break
         else: 
