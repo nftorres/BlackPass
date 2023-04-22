@@ -28,7 +28,7 @@ def blackpass():
                 output("Hash: ", salto="")
                 print(password_hash,end="\n\n")
                 output("Función de Hash: bcrypt")
-                output("Destino: 'Credenciales.py'")
+                output("Destino: 'Credenciales.txt'")
                 footer()
                 break
         elif longitud_contraseña >= 4 and longitud_contraseña <= 9:
@@ -54,7 +54,7 @@ def blackpass():
                 output("Hash: ", salto="")
                 print(password_hash,end="\n\n")
                 output("Función de Hash: bcrypt")
-                output("Destino: 'Credenciales.py'")
+                output("Destino: 'Credenciales.txt'")
                 footer()
                 break
         elif longitud_contraseña > 9 and longitud_contraseña <= 15:
@@ -80,7 +80,7 @@ def blackpass():
                 output("Hash: ", salto="")
                 print(password_hash,end="\n\n")
                 output("Función de Hash: bcrypt")
-                output("Destino: 'Credenciales.py'")
+                output("Destino: 'Credenciales.txt'")
                 footer()
                 break
         elif longitud_contraseña > 15 and longitud_contraseña <= 40:
@@ -106,7 +106,7 @@ def blackpass():
                 output("Hash: ", salto="")
                 print(password_hash,end="\n\n")
                 output("Función de Hash: bcrypt")
-                output("Destino: 'Credenciales.py'")
+                output("Destino: 'Credenciales.txt'")
                 footer()
                 break
         else: 
