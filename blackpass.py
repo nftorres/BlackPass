@@ -14,7 +14,7 @@ def blackpass():
     escribir("---------------------------BlackPass V1-Español---------------------------")
     escribir("Generador de contraseñas :)")
     while True:
-        longitud_contraseña = int(input("Longitud de la contraseña: "))
+        longitud_contraseña = int(input("Longitud de la contraseña(Min:1 - Max:40): "))
         if longitud_contraseña > 0 and longitud_contraseña < 4:
             contraseña = config_contraseña(longitud_contraseña)
             print()
