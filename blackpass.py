@@ -10,8 +10,10 @@ la librería bcrypt y lo almacena en un archivo de manera local y remota.
 """
 from funciones_blackpass import *
 
+
 def blackpass():
-    escribir("---------------------------BlackPass V1-Español---------------------------")
+    escribir(
+        "---------------------------BlackPass V1-Español---------------------------")
     escribir("Generador de contraseñas :)")
     while True:
         longitud_contraseña = int(input("Longitud de la contraseña(Min:1 - Max:40): "))
@@ -27,7 +29,8 @@ def blackpass():
                 print()
                 continue
             else:
-                escribir("------------------------------------------------------------------")
+                escribir(
+                    "------------------------------------------------------------------")
                 escribir("Información de la contraseña:")
                 escribir("Contraseña: ", salto=False)
                 escribir(contraseña)
@@ -36,7 +39,7 @@ def blackpass():
                 escribir("id: ", salto=False)
                 escribir(id)
                 escribir("Hash: ", salto=False)
-                print(hash_contraseña,end="\n\n")
+                print(hash_contraseña, end="\n\n")
                 escribir("Función de Hash: bcrypt")
                 escribir("Destino: 'Credenciales.txt'")
                 mostrar_creditos()
@@ -46,14 +49,16 @@ def blackpass():
             print()
             escribir("Contraseña Generada: ", salto=False)
             escribir(contraseña)
-            escribir(f"Esta contraseña es insegura, un hacker podía adivinarla facilmente...")
+            escribir(
+                f"Esta contraseña es insegura, un hacker podía adivinarla facilmente...")
             cambiar = input("¿Quieres generar otra?: ")
             if 'si' in cambiar.lower():
                 escribir("-----------------------")
                 print()
                 continue
             else:
-                escribir("------------------------------------------------------------------")
+                escribir(
+                    "------------------------------------------------------------------")
                 escribir("Información de la contraseña:")
                 escribir("Contraseña: ", salto=False)
                 escribir(contraseña)
@@ -62,7 +67,7 @@ def blackpass():
                 escribir("id: ", salto="")
                 escribir(id)
                 escribir("Hash: ", salto=False)
-                print(hash_contraseña,end="\n\n")
+                print(hash_contraseña, end="\n\n")
                 escribir("Función de Hash: bcrypt")
                 escribir("Destino: 'Credenciales.txt'")
                 mostrar_creditos()
@@ -79,7 +84,8 @@ def blackpass():
                 print()
                 continue
             else:
-                escribir("------------------------------------------------------------------")
+                escribir(
+                    "------------------------------------------------------------------")
                 escribir("Información de la contraseña:")
                 escribir("Contraseña: ", salto=False)
                 escribir(contraseña)
@@ -88,7 +94,7 @@ def blackpass():
                 escribir("id: ", salto=False)
                 escribir(id)
                 escribir("Hash: ", salto=False)
-                print(hash_contraseña,end="\n\n")
+                print(hash_contraseña, end="\n\n")
                 escribir("Función de Hash: bcrypt")
                 escribir("Destino: 'Credenciales.txt'")
                 mostrar_creditos()
@@ -105,7 +111,8 @@ def blackpass():
                 print()
                 continue
             else:
-                escribir("------------------------------------------------------------------")
+                escribir(
+                    "------------------------------------------------------------------")
                 escribir("Información de la contraseña:")
                 escribir("Contraseña: ", salto=False)
                 escribir(contraseña)
@@ -114,12 +121,15 @@ def blackpass():
                 escribir("id: ", salto=False)
                 escribir(id)
                 escribir("Hash: ", salto=False)
-                print(hash_contraseña,end="\n\n")
+                print(hash_contraseña, end="\n\n")
                 escribir("Función de Hash: bcrypt")
                 escribir("Destino: 'Credenciales.txt'")
                 mostrar_creditos()
                 break
-        else: 
-            escribir("Lo siento, escribiste una longitud negativa o fuera del rango. Vuelve a intentarlo")
+        else:
+            escribir(
+                "Lo siento, escribiste una longitud negativa o fuera del rango. Vuelve a intentarlo")
             continue
+
+
 blackpass()
